@@ -15,20 +15,20 @@ public class Main {
             System.out.println("3. Hur mycket pengar vill du sätta in?");
             System.out.println("4. Avsluta programmet");
             System.out.println("Val: ");
+
             choice = scanner.nextInt();
             scanner.nextLine();
 
-
             if (choice == 1) {
-            System.out.println("Name: ");
-            String name = scanner.nextLine();
-            System.out.println("Ange startsaldo: ");
-            int balance = scanner.nextInt();
-            scanner.nextLine();
-            register.createAccount(name, balance);
-            System.out.println("Kontot har skapats");
+                System.out.println("Name: ");
+                String name = scanner.nextLine();
+                System.out.println("Ange startsaldo: ");
+                int balance = scanner.nextInt();
+                scanner.nextLine();
+                register.createAccount(name, balance);
+                System.out.println("Kontot har skapats");
 
-        } else if (choice == 2) {
+            } else if (choice == 2) {
                 register.printAll();
 
             } else if (choice == 3) {
@@ -36,7 +36,7 @@ public class Main {
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
 
-                if (found != null){
+                if (found != null) {
                     System.out.println("Belopp: ");
                     int amount = scanner.nextInt();
                     found.deposit(amount);
@@ -45,15 +45,12 @@ public class Main {
                     System.out.println("Kontot saknas: " + name);
                 }
 
-            } else if (choice == 4){
+            } else if (choice == 4) {
                 System.out.println("Hej då!");
+
             } else {
                 System.out.println("Ogiltigt val! Var vänlig och försök igen :) ");
             }
-
-            }
-
-
-
+        }
     }
 }
